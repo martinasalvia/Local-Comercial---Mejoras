@@ -538,7 +538,7 @@ main {
      flex-direction: row;
     justify-content: center;
     gap: 8px;
-    flex-wrap: wrap; /* por si el espacio es muy justo */
+    flex-wrap: wrap; 
   }
 
   .cantidad-control button {
@@ -566,6 +566,7 @@ main {
   .main-nav ul {
     display: none; /* oculto x defecto*/
     flex-direction: column;
+    align-items: center; 
     gap: 16px;
     padding: 20px;
     background: #fff;
@@ -587,5 +588,6 @@ main {
     align-items: center;
   }
 }
+
 
 
