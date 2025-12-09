@@ -448,60 +448,31 @@ main {
 
 /* -------------------- MEDIA QUERIES -------------------- */
 
-/* Tablets grandes */
+/* Tablets grandes (≤ 992px) */
 @media (max-width: 992px) {
   .layout {
     display: grid;
-    grid-template-columns: 2fr 1fr; 
+    grid-template-columns: 2fr 1fr;
     gap: 24px;
   }
 
-  .promos-cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .productos-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
+  .promos-cards { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .productos-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
 }
 
-/* Tablets medianas */
+/* Tablets medianas (≤ 768px) */
 @media (max-width: 768px) {
-  .layout {
-    display: block; 
-  }
+  .layout { display: block; }
+  .carrito { margin-top: 32px; }
 
-  .carrito {
-    margin-top: 32px;
-  }
+  .promos-cards { grid-template-columns: 1fr; gap: 16px; }
+  .productos-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 
-  .promos-cards {
-    grid-template-columns: 1fr; 
-    gap: 16px;
-  }
+  .product-card img { height: 220px; object-fit: cover; }
+  .product-card h4 { font-size: 16px; }
+  .product-card .price { font-size: 15px; }
 
-  .productos-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  .product-card img {
-    height: 220px;
-    object-fit: cover;
-  }
-
-  .product-card h4 {
-    font-size: 16px;
-  }
-
-  .product-card .price {
-    font-size: 15px;
-  }
-}
-
-/* Menú hamburguesa */
+  /* Menú hamburguesa (un solo bloque dentro del @media) */
   .menu-btn {
     display: block;
     background: none;
@@ -509,12 +480,13 @@ main {
     font-size: 28px;
     cursor: pointer;
     color: var(--brand);
+    margin-left: auto; /* si el header es flex, empuja a la derecha */
   }
 
   .main-nav ul {
     display: none;
     flex-direction: column;
-    text-align: center;
+    align-items: center;      /* centra los ítems en el eje horizontal */
     gap: 16px;
     padding: 20px;
     background: #fff;
@@ -527,8 +499,14 @@ main {
     z-index: 999;
   }
 
-  .main-nav ul.activo {
-    display: flex;
+  .main-nav ul.activo { display: flex; }
+
+  /* Centrado del contenido de cada ítem */
+  .main-nav ul li { width: 100%; }
+  .main-nav ul li a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
   }
 
   .header-inner {
@@ -537,95 +515,30 @@ main {
   }
 }
 
-/* Móviles pequeños */
+/* Móviles pequeños (≤ 480px) */
 @media (max-width: 480px) {
-  .promos-title {
-    font-size: 20px;
-  }
+  .promos-title { font-size: 20px; }
+  .promo-leyenda { font-size: 14px; line-height: 1.4; }
 
-  .promo-leyenda {
-    font-size: 14px;
-    line-height: 1.4;
-  }
+  .promos-cards { grid-template-columns: 1fr; gap: 12px; }
+  .productos-grid { grid-template-columns: 1fr; gap: 12px; }
 
-  .promos-cards {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .productos-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .product-card img {
-    height: 200px;
-  }
-
-  .product-card h4 {
-    font-size: 15px;
-  }
-
-  .product-card .price {
-    font-size: 14px;
-  }
+  .product-card img { height: 200px; }
+  .product-card h4 { font-size: 15px; }
+  .product-card .price { font-size: 14px; }
 
   .cantidad-control {
-     flex-direction: row;
+    flex-direction: row;
     justify-content: center;
     gap: 8px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
   }
 
   .cantidad-control button {
-  min-width: 40px;
-  padding: 6px 8px;
-  font-size: 16px;
+    min-width: 40px;
+    padding: 6px 8px;
+    font-size: 16px;
   }
 
-  .carrito {
-    margin-top: 24px;
-  }
-
-
-/* Menú hamburguesa */
-  .menu-btn {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: var(--brand);
-  }
-
-  .main-nav ul {
-    display: none;
-    flex-direction: column;
-    text-align: center;
-    gap: 16px;
-    padding: 20px;
-    background: #fff;
-    border-top: 1px solid #eee;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 999;
-  }
-
-  .main-nav ul.activo {
-    display: flex;
-  }
-
-  .header-inner {
-    justify-content: space-between;
-    align-items: center;
-  }
+  .carrito { margin-top: 24px; }
 }
-
-
-
-
-
-
