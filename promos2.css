@@ -535,14 +535,23 @@ main {
   }
 
   .cantidad-control {
-    flex-direction: column;
-    gap: 6px;
+     flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap; /* por si el espacio es muy justo */
+  }
+
+  .cantidad-control button {
+  min-width: 40px;
+  padding: 6px 8px;
+  font-size: 16px;
   }
 
   .carrito {
     margin-top: 24px;
   }
 }
+
 
 @media (max-width: 768px) {
   .menu-btn {
@@ -578,4 +587,5 @@ main {
     align-items: center;
   }
 }
+
 
