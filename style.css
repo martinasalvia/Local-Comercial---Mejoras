@@ -88,7 +88,7 @@ nav ul li a:hover { color: #d6a4a4; }
 .banner{
   width:100%;
   min-height: 560px;
-  background-image: url("img/banner sofia.jpg"); 
+  background-image: url("img/banner1.jpg"); 
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -812,4 +812,5 @@ main {
     justify-content: space-between;
     align-items: center;
   }
+
 }
