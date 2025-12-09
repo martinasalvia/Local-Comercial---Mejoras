@@ -812,6 +812,53 @@ main {
     justify-content: space-between;
     align-items: center;
   }
-
 }
+
+
+/* ===== TABLET ===== */
+@media (max-width: 992px) {
+  .gallery {
+    padding: 15px 0;
+  }
+
+  .gallery-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  .gallery .thumb-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px;
+    max-width: 900px;
+  }
+
+  .gallery .thumb-grid img {
+    height: 150px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .gallery {
+    padding: 10px 0;
+  }
+
+  .gallery-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .gallery .thumb-grid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 6px;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .gallery .thumb-grid img {
+    height: 130px; 
+    border-radius:4px;
+    }
+}
+
 
