@@ -583,11 +583,24 @@ main {
     display: flex; /* aparece al apretar el botón */
   }
 
+  .main-nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-nav ul li a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+
+
   .header-inner {
     justify-content: space-between;
     align-items: center;
   }
 }
+
 
 
 
